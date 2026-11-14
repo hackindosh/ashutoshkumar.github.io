@@ -273,7 +273,17 @@ video {
 /* MOBILE RESPONSIVENESS                      */
 /* ========================================== */
 @media screen and (max-width: 850px) {
-    
+    /* Stack the navigation bar */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 10px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
     /* This makes the navigation bar scroll away on phones */
     .status-bar {
         position: relative;
