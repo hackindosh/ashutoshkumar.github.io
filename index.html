@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ashutosh kumar</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/moon-and-stars.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <link rel="stylesheet" href="style.css">
+<!-- NEW: Moved script to the head, targeting the html element -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+    <body class="preload">
+    <!-- This instantly sets dark mode without animating it -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+    
+    <div id="mandelbrot-bg"></div>
+    <!-- ... rest of code ... -->
+
+
+    <header class="status-bar">
+        <nav>
+            <div class="nav-brand">ashutosh kumar</div>
+            <div class="nav-links">
+                <a href="index.html">[home]</a>
+                <a href="works.html">[works]</a>
+                <a href="Ashutosh_Kumar_CV.pdf" target="_blank">[cv]</a>
+                <button id="theme-toggle" class="textmode-btn">[ ☽ ]</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="home" class="split-layout">
+        <!-- Left Column: Text and Buttons -->
+        <div class="left-column">
+            <section class="content">
+                <div class="custom-text">
+                    <p>Hello!</p>
+                    <p>This is Ashutosh and I am currently a PhD student in Informatics in University of Illinois Urbana-Champaign                          My research examines how caste persists, mutates, and becomes encoded within digital infrastructures. I study how social hierarchies are not erased by technology but rearticulated through its design, aesthetics, and circulation.</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="mailto:kumar73@illinois.edu" class="textmode-btn">[ \x/ ] email me</a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column: Interactive Image -->
+        <div class="right-column">
+            <div class="scratch-wrapper">
+                <div class="fake-html-bg violet-code">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html lang="en"&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&lt;title&gt;Hidden Layer&lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    <br>
+                    &nbsp;&nbsp;&lt;!-- what are you expecting to find behind the image - a code that is not here --&gt;<br>
+                    <br>
+                    &nbsp;&nbsp;&lt;div class="void-space"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="secret-message"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if you want to see me again just double click<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&lt;/div&gt;<br>
+                    <br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                <div id="scratch-canvas-container"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
