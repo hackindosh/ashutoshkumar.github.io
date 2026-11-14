@@ -273,17 +273,21 @@ video {
 /* MOBILE RESPONSIVENESS                      */
 /* ========================================== */
 @media screen and (max-width: 850px) {
+    
+    /* This makes the navigation bar scroll away on phones */
+    .status-bar {
+        position: relative;
+        top: 0;
+    }
+
     /* Stack the navigation bar */
     nav {
         flex-direction: column;
         gap: 15px;
         padding: 15px 10px;
     }
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
+    
+    /* ... the rest of your mobile CSS stays exactly the same ... */
 
     /* Stack the side-by-side layout vertically */
     .split-layout {
