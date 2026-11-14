@@ -270,36 +270,29 @@ video {
 }
 
 /* ========================================== */
-/* MOBILE RESPONSIVENESS                      */
+/* UNIVERSAL MOBILE RESPONSIVENESS            */
 /* ========================================== */
+
 @media screen and (max-width: 850px) {
-    /* Stack the navigation bar */
+    /* 1. Forcefully removes the sticky behavior so it scrolls away */
+    .status-bar {
+        position: static !important;
+        margin-top: 20px;
+    }
+
+    /* Stacks the navigation bar */
     nav {
         flex-direction: column;
         gap: 15px;
-        padding: 15px 10px;
+        padding: 10px;
     }
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
     }
-    /* This makes the navigation bar scroll away on phones */
-    .status-bar {
-        position: relative;
-        top: 0;
-    }
 
-    /* Stack the navigation bar */
-    nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 10px;
-    }
-    
-    /* ... the rest of your mobile CSS stays exactly the same ... */
-
-    /* Stack the side-by-side layout vertically */
+    /* Stacks the side-by-side layout vertically */
     .split-layout {
         flex-direction: column;
         align-items: center;
@@ -307,7 +300,6 @@ video {
         padding: 0 15px;
     }
     
-    /* Move the text below the image on mobile */
     .left-column {
         order: 2;
         width: 100%;
@@ -317,23 +309,22 @@ video {
         width: 100%;
     }
 
-    /* Keep the image centered at the top */
     .right-column {
         order: 1;
         width: 100%;
         display: flex;
         justify-content: center;
-        overflow: hidden;
+        overflow-x: hidden; /* Prevents invisible horizontal scrolling */
     }
 
-    /* Proportionally shrink the 400px canvas to fit phone screens */
+    /* Scales the 400px canvas for tablets / large phones */
     .scratch-wrapper {
         transform: scale(0.85);
         transform-origin: top center;
-        margin-bottom: -30px; /* Compensates for the scaled height */
+        margin-bottom: -50px; 
     }
 
-    /* Ensure documentary thumbnails shrink to fit */
+    /* Shrinks works grid thumbnails */
     .work-thumb {
         width: 100%;
         height: auto;
@@ -343,5 +334,27 @@ video {
     .project-page {
         margin: 30px auto;
         padding: 0 15px;
+    }
+}
+
+/* 2. Fits standard phones (e.g., iPhone 12/13/14, Samsung Galaxy) */
+@media screen and (max-width: 480px) {
+    .scratch-wrapper {
+        transform: scale(0.75);
+        margin-bottom: -90px; /* Pulls the text up so there isn't a massive gap */
+    }
+    .status-bar {
+        border-top: none; /* Looks cleaner on small screens */
+    }
+    .nav-brand {
+        font-size: 1.4rem; /* Slightly smaller name for narrow screens */
+    }
+}
+
+/* 3. Fits tiny/older phones (e.g., iPhone SE, Mini) */
+@media screen and (max-width: 380px) {
+    .scratch-wrapper {
+        transform: scale(0.65);
+        margin-bottom: -130px; 
     }
 }
