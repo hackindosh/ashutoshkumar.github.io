@@ -53,11 +53,8 @@ body.dark-mode #mandelbrot-bg {
 
 /* Status Bar */
 .status-bar {
-    position: sticky;
-    top: 30px; 
-    z-index: 100;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 30px auto 0 auto; /* Keeps the 30px gap at the top, centers it horizontally */
     background: var(--nav-bg);
     border-top: 1px dashed var(--accent);
     border-bottom: 1px dashed var(--accent);
