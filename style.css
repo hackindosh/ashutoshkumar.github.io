@@ -268,3 +268,66 @@ video {
     border: none;
     display: block;
 }
+
+/* ========================================== */
+/* MOBILE RESPONSIVENESS                      */
+/* ========================================== */
+@media screen and (max-width: 850px) {
+    /* Stack the navigation bar */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 10px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Stack the side-by-side layout vertically */
+    .split-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    /* Move the text below the image on mobile */
+    .left-column {
+        order: 2;
+        width: 100%;
+    }
+    .action-buttons {
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Keep the image centered at the top */
+    .right-column {
+        order: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    /* Proportionally shrink the 400px canvas to fit phone screens */
+    .scratch-wrapper {
+        transform: scale(0.85);
+        transform-origin: top center;
+        margin-bottom: -30px; /* Compensates for the scaled height */
+    }
+
+    /* Ensure documentary thumbnails shrink to fit */
+    .work-thumb {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+    
+    .project-page {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+}
